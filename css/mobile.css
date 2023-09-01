@@ -1,0 +1,590 @@
+/* Allgemeines--------------------------------------------------------------------------------------------------------------------*/
+/* Von oben nach unten--------------------- */
+/* Cookie -----------------------------*/
+
+#cookiedingsbums a {
+	color: #000;
+	text-decoration: none;
+}
+#cookiedingsbums a:hover {
+	text-decoration: underline;
+}
+#cookiedingsbums {
+	outline: 1px solid #7b92a9;
+	text-align: center;
+	border-top: 1px solid #fff;
+	border-radius: 5px;
+	background: linear-gradient(#dddddddd, #eeeeeedd);
+	position: fixed;
+	top: 10vh;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10000;
+	width: 50vw;
+	font-size: 1rem;
+	line-height: 2rem;
+	padding: 1rem;
+}
+.cookiedingsbumsCloser {
+	color: #333;
+	font: 14px/100% arial, sans-serif;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #fff;
+	cursor: pointer;
+	border: 1px solid white;
+	border-color: white #7b92a9 white #7b92a9;
+	padding: 4px 10px;
+	margin-left: 10px;
+	background: #ddd; /* Old browsers */
+	background: linear-gradient(#eee, #ddd);
+}
+.cookiedingsbumsCloser:hover {
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	border-top: 1px solid #7b92a9;
+	border-left: 1px solid #7b92a9;
+}
+
+/*HTML----------------------------*/
+
+html {
+	background: rgb(246, 246, 246);
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	max-width: 1204px;
+	margin: auto;
+	box-shadow: 0px 0px 10px silver;
+}
+
+/*font-families--------------------------------------------------------------------------------*/
+@font-face {
+	font-family: JetBrainsMono;
+	src: url('../fonts/JetBrainsMono-VariableFont_wght.ttf')format('truetype');
+}
+
+/*Logo----------------------------------------------------------------------------------------*/
+
+img[src*="192x192."]{
+	position: absolute;
+	width: 70px;
+	top:-5px;
+	right:50px;
+	z-index: 100;
+}
+
+/*Top-Navigation-------------------------------------------------------------------------------*/
+
+#topheader1, #topheader2{
+	display:none;
+}
+header {
+  position: relative;
+  background-color: black;
+  height: 100px;
+}
+input[type*="checkbox"]{
+	display:none;
+}
+#topnav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+#topnav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  
+}
+#topnav a {
+  text-decoration: none;
+  color: white;
+  font-family: JetBrainsMono;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  display: block;
+  
+}
+.menu-icon {
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: none;
+}
+/* Media query for mobile devices */
+@media (max-width: 699px) {
+  #topnav ul {
+    display: none;
+  }  
+  .menu-icon {
+    display: block;
+  }
+  #menu-toggle:checked ~ ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: black;
+    position: absolute;
+    top: 100%;
+    left: 0;
+	width: 100%;
+    padding: 20px;
+    z-index: 50;
+	
+  } 
+  #menu-toggle:checked ~ ul li {
+    margin-bottom: 10px;
+	
+  }
+  #menu-toggle:checked ~ .menu-icon::after {
+    content: "✕";
+  }
+}
+
+/*Main-----------------------------------------------------------------------------------------------*/
+
+main {
+	background: rgba(228, 228, 228, 1.00);
+	padding: 20px;
+}
+main > * {
+	font-family: JetBrainsMono;
+	color: black;
+}
+main ul {
+	list-style: none;
+	padding-left: 30px;
+}
+main ul li::before {
+	content: "\00bb";
+	font-weight: bold;
+	font-size: 2rem;
+	color: black;
+	display: inline-block;
+	text-indent: -30px;
+	transform: translateY(3px);
+}
+
+/*Spalterei------------------------------------------------------------------------------------------*/
+ 
+	.spalten {
+		display: flex;
+		padding: 2% 0;
+	}
+	.spalten > * {
+		flex-basis: 0;
+		flex-grow: 1;
+	}
+	.zweispalter50_50, .zweispalter75_25, .zweispalter25_75, .zweispalter60_40 {
+		display: flex;
+	}
+	.zweispalter50_50 > * {
+		flex-basis: 50%;
+	}
+	.zweispalter60_40 > div:first-of-type {
+		flex-basis: 60%;
+	}
+	.zweispalter60_40 > div:last-of-type {
+		flex-basis: 40%;
+	}
+
+/*Abstände---------------------------------------------------------------------------------------------*/
+
+.pad1 {
+	padding: 1%;
+}
+.pad10 {
+	padding: 1% 0;
+}
+.pad12 {
+	padding: 1% 2%;
+}
+.pad2 {
+	padding: 2%;
+}
+.pad20 {
+	padding: 2% 0;
+}
+.pad02 {
+	padding: 0 2%;
+}
+.pad200 {
+	padding: 2% 0 0;
+}
+.pad201 {
+	padding: 2% 0 1%;
+}
+.pad002 {
+	padding: 0 0 2%;
+}
+.pad3 {
+	padding: 3%;
+}
+.pad30 {
+	padding: 3% 0;
+}
+.pad32 {
+	padding: 3% 2%;
+}
+.pad300 {
+	padding: 3% 0 0;
+}
+.pad301 {
+	padding: 3% 0 1%;
+}
+.pad003 {
+	padding: 0 0 3%;
+}
+.pad5 {
+	padding: 5%;
+}
+.pad50 {
+	padding: 5% 0%;
+}
+.pad52 {
+	padding: 5% 2%;
+}
+.pad503 {
+	padding: 5% 0% 3%;
+}
+.pad005 {
+	padding: 0% 0% 5%;
+}
+.pad528 {
+	padding: 5% 2% 8%;
+}
+.mar2 {
+	margin: 2%;
+}
+.mar20 {
+	margin: 2% 0;
+}
+.mar002 {
+	margin: 0 0 2%;
+}
+.mar3 {
+	margin: 3%;
+}
+.mar30 {
+	margin: 3% 0;
+}
+.mar004 {
+	margin: 0 0 4%;
+}
+.mar5 {
+	margin: 5%;
+}
+.mar50 {
+	margin: 5% 0;
+}
+
+/*Footer--------------------------------------------------------------------------------------------*/
+
+footer {
+	background-color:black;
+	color: #fff;
+	font-size:20px;
+	min-height: 100px;
+	font-family: JetBrainsMono;
+}
+.vierspalter {
+	display: block;
+	text-align:center;
+	
+}
+.vierspalter > div {
+	min-height: 100px;
+	display:block;
+}
+.vierspalter ul {
+	list-style: none;
+}
+.vierspalter h4 {
+	padding: 2% 0;
+}
+.social-media li {
+	padding: 0 0 10px;
+}
+.social-media span {
+	font-size: 3rem;
+}
+.social-media span:hover {
+	transform: scale(1.1);
+}
+hr {
+	color: white;
+	border: 1px dotted;
+}
+footer p {
+	text-align: center;
+}
+footer div:last-of-type {
+	padding: 0 0 4%;
+}
+.footer-links a {
+	text-decoration: none;
+	color: white;
+}
+.footer-links a:hover {
+	color: rgba(7, 251, 151, 1.00);
+}
+
+.footermobile{display:block;}
+
+.footermobile div:nth-of-type(3){display:none}
+.footermobile div:nth-of-type(4){display:none}
+
+/* Intro.html----------------------------------------------------------------------------------*/
+
+audio {
+	display: none;
+}
+
+/* About.html----------------------------------------------------------------------------------*/
+
+.block {
+	text-align: justify;
+}
+.antiflex{
+	display:block;
+}
+.img_rechts {
+	padding:5%;
+}
+.img_rechts_bl {
+	padding: 10%;
+}
+.table-container {
+	display: flex;
+}
+table {
+	flex-basis: 100%;
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	margin: 20px 0;
+	border-radius: 8px;
+}
+th, td {
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+th {
+	text-align: left;
+}
+thead th {
+	background: black;
+	color: rgb(170, 255, 221);
+}
+tbody tr:hover {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+button {
+	width: 100%;
+	height: 50px;
+	color: rgb(170, 255, 221);
+	background: black;
+	border-radius: 8px;
+}
+button:hover {
+	color: black;
+	background-color: rgba(7, 251, 151, 1.00);
+}
+.image-text {
+	display: none;
+}
+input {
+	width: 50%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+}
+th {
+	cursor: pointer;
+}
+th.ascending::after {
+	content: '\2191';
+	margin-left: 5px;
+}
+th.descending::after {
+	content: '\2193';
+	margin-left: 5px;
+}
+#ich {
+	border: 1px solid black;
+	width: 70%;
+}
+#sagrada {
+	border: 1px solid black;
+	width: 70%;
+}
+
+/*Samples.html-------------------------------------------------------------------------------*/
+
+.main-container {
+	display: flex;
+}
+.highlight-container {
+	display: flex;
+	flex-basis: calc(33.33% - 20px);
+	margin-right: 20px;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 20px;
+	background-color: black;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s;
+}
+.highlight-container:hover {
+	transform: scale(1.05);
+	color: black;
+	background-color: rgba(7,251,151,1.00);
+
+}
+.highlight-container h2 {
+	margin-bottom: 10px;
+}
+.highlight-container a {
+	text-decoration: none;
+	color: rgb(170, 255, 221);
+}
+.highlight-container a:hover {
+	color: black;
+}
+
+/* Contact.html----------------------------------------------------------------------------*/
+
+input[type=text], input[type=email], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+}
+textarea {
+	resize: none;
+}
+input[type=submit] {
+	background-color: black;
+	color: rgb(170, 255, 221);
+	padding: 20px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-family: JetBrainsMono;
+	width:100%;
+}
+input[type=submit]:hover {
+	color: black;
+	background-color: rgba(7, 251, 151, 1.00);
+}
+.container {
+	border-radius: 5px;
+	width: 100%;
+}
+
+/* Cookie.html-------------------------------------------------------------------------------*/
+
+.datenschutz_a {
+	text-decoration: none;
+	color: blue;
+}
+.datenschutz_a:hover {
+	color: rgb(1, 22, 6);
+}
+.cookie_text p {
+	padding: 0 0 2%;
+}
+.cookie_a {
+	text-decoration: none;
+	color: blue;
+}
+.cookie_a:hover {
+	color: rgb(1, 22, 6);
+}
+
+/* Datenschutz.html---------------------------------------------------------------------------*/
+
+.datenschutz_a {
+	text-decoration: none;
+	color: blue;
+}
+.datenschutz_a:hover {
+	color: rgb(1, 22, 6);
+}
+
+/*Flavorfood.html------------------------------------------------------------------------------*/
+
+.recipe-details {
+	display: none;
+}
+select {
+	width: 50%;
+}
+
+/*travel.html------------------------------------------------------------------------------------*/
+
+svg {
+	width: 100%;
+}
+svg path {
+	fill: #00394f;
+	stroke: #eee;
+	stroke-width: .25;
+}
+.Canada {
+	fill: rgba(177, 0, 0, 1.00);
+}
+#DE {
+	fill: rgba(177, 0, 0, 1.00);
+}
+#ES {
+	fill: rgba(177, 0, 0, 1.00);
+}
+#ZA {
+	fill: rgba(177, 0, 0, 1.00);
+}
+svg path:hover {
+	fill: #006284;
+	transition: 0.6s;
+	cursor: pointer;
+}
+#textElement {
+	display: none;
+}
+#replacementTextElement {
+	display: none;
+}
+#replacementTextElementDE {
+	display: none;
+}
+#replacementTextElementCanada {
+	display: none;
+}
+#replacementTextElementZA {
+	display: none;
+}
+#replacementTextElementES {
+	display: none;
+}
+
+/*Usability.html--------------------------------------------------------------------------*/
+iframe {
+	border: 1px hidden lightgray;
+	width: 100%;
+	height: 1000px;
+}

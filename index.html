@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Martin's Website</title>
+<meta charset="utf-8">
+<!--png-Favicon mit Fallback - aktuelle Variante -->
+<link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png">
+<!--CSS-Libraries -->
+<link rel="stylesheet" href="css/all.min.css">
+<link rel="stylesheet" href="css/starwarsintro.css">
+<link rel="stylesheet" href="css/default.css">
+<link rel="stylesheet" media="screen and (max-width: 699px)" href="css/mobile.css">
+<!--Meta tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, no follow">
+<meta name="author" content="Martin John Peiffer">
+<meta name="description" content="Martin Peiffer|Aspiring Webdesigner|Front-End Developmenter|UX-UI Designer - Projects, collabration, exchange">
+<meta name="keywords" content="html, css, javascript, webdesign, webdesigner,ux-ui design, ux-ui designer, front-end, front-end developer, portfolio, samples, travel, hoexter, flavor food">
+</head>
+<body>
+<div id="topheader1"></div>
+<header>
+	<nav id="topnav"> <a href="index.html"><img src="img/logo/android-chrome-192x192.png" alt="logo"></a>
+		<input type="checkbox" id="menu-toggle">
+		<label for="menu-toggle" class="menu-icon">&#9776;</label>
+		<ul>
+			<li><a href="about.html">About Me</a>
+				<ul>
+					<li><a href="about.html#whoami"><span class="fa-regular fa-face-smile"></span> Who am I?</a></li>
+					<li><a href="about.html#motivation"><span class="fa-solid fa-face-grin-stars"></span> Motivation</a></li>
+					<li><a href="about.html#interests"><span class="fa-brands fa-galactic-republic"></span> Interests</a></li>
+					<li><a href="about.html#links"><span class="fa-solid fa-download"></span> Links</a></li>
+				</ul>
+			</li>
+			<li><a href="samples.html">Samples</a>
+				<ul>
+					<li><a href="travel.html"><span class="fa-solid fa-earth-americas"></span> Travel</a></li>
+					<li><a href="flavorfood.html"><span class="fa-solid fa-pepper-hot"></span> Flavor Food</a></li>
+					<li><a href="usability.html"><span class="fa-solid fa-pen-nib"></span> Usability</a></li>
+				</ul>
+			</li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="#footer">Legal Notice</a></li>
+		</ul>
+	</nav>
+</header>
+<div id="topheader2"></div>
+<main>
+	<div>
+		<div class="star-wars-intro"> 
+			
+			<!-- Blue Intro Text -->
+			<p class="intro-text"> For langer, langer Zeit bzw. vor ein paar Wochen... </p>
+			
+			<!-- Logo Image or Text goes in here -->
+			<h2 class="main-logo"> <img src="img/Star_Wars_Yellow_Logo.svg" alt="Star Wars Logo"> </h2>
+			
+			<!-- All Scrolling Content Goes in here -->
+			<div class="main-content">
+				<div class="title-content">
+					<p class="content-header">MARTIN PEIFFER<br/>
+						Episode I - Webdesign</p>
+					<br>
+					<p class="content-body">Es ist eine Zeit für einen neuen Beginn. Schon lange wurde vieles ausprobiert. Der jetzige Weg erscheint der Richtige zu sein. Webdesign und das Ausgestalten und Erstellen von Webseiten die Zukunft. Im Alfatraining-Kurs wurde viel dazugelernt. Vielseitig gelehrt und getüffelt. Semantische HTML-Strukturierung, Formulare, Flexbox, Gridsysteme, CSS-Selektoren, Photoshop-Bildaufbereitung, responsive Webgestaltung, Hamburger-Menüs, Metadaten, SEO und vieles mehr. Es macht Spaß. Es ist fordernd. Es ist kreativ. Das Ende noch lange nicht erreicht. Ich möchte dazulernen, mich weiterbilden und meinen Weg gehen... </p>
+				</div>
+			</div>
+			<audio id="bgAudio" controls autoplay>
+				<source src="http://www.thesoundarchive.com/starwars/star-wars-theme-song.mp3" />
+				Your browser does not support the audio element. </audio>
+			<script>
+	// Get the audio element
+	var audio = document.getElementById("bgAudio");
+
+	 // Set the desired start and end time (in seconds)
+	 var startTime = 10;
+	 var endTime = 70;
+
+	 // Set the starting point of the audio
+	 audio.currentTime = startTime;
+
+	 // Pause the audio when it reaches the end time
+	 audio.addEventListener("timeupdate", function() {
+	if (audio.currentTime >= endTime) {
+	 audio.pause();
+		}
+	  });
+
+	  // Autoplay the audio
+	  audio.play();
+	</script> 
+		</div>
+	</div>
+</main>
+<footer id="footer">
+	<div class="footermobile vierspalter">
+		<div>
+			<ul>
+				<li>Angaben gemäß § 5 TMG</li>
+				<li>Martin John Peiffer</li>
+				<li>&nbsp;</li>
+				<li>Deutzer Freiheit 116</li>
+				<li>D-50679 Cologne</li>
+				<li>&nbsp;</li>
+				<li>martin.peiffer2(at)gmail.com</li>
+			</ul>
+		</div>
+		<div>
+			<ul class="footer-links">
+				<li><a href="datenschutz.html">Datenschutz</a></li>
+				<li><a href="cookies.html">Cookies</a></li>
+			</ul>
+		</div>
+		<div>
+			<ul class="footer-links">
+				<li><a href="about.html">ABOUT ME</a></li>
+				<li><a href="about.html#whoami">Who am I?</a></li>
+				<li><a href="about.html#motivation">Motivation</a></li>
+				<li><a href="about.html#interests">Interests</a></li>
+				<li><a href="about.html#links">Links</a></li>
+			</ul>
+		</div>
+		<div>
+			<ul class="footer-links">
+				<li><a href="samples.html">SAMPLES</a></li>
+				<li><a href="travel.html">Travel</a></li>
+				<li><a href="flavorfood.html">Flavor Food</a></li>
+				<li><a href="usability.html">Usability</a></li>
+			</ul>
+		</div>
+		<div>
+			<ul class="footer-links">
+				<li><a href="contact.html">CONTACT</a></li>
+			</ul>
+		</div>
+		<div>
+			<ul class="social-media footer-links">
+				<li>SOCIAL MEDIA</li>
+				<li><a href="https://www.facebook.com/martin.peiffer.89" target="_blank"><span class="fa-brands fa-facebook"></span></a> <a href="https://github.com/PeifferM" target="_blank"><span class="fa-brands fa-github"></span></a> <a href="https://www.xing.com/profile/Martin_Peiffer4/cv" target="_blank"><span class="fa-brands fa-xing"></span></a> <a href="https://de.linkedin.com/in/martin-peiffer-244222262" target="_blank"><span class="fa-brands fa-linkedin"></span></a> </li>
+			</ul>
+		</div>
+	</div>
+	<hr>
+	<p>&copy; 2023 Martin John Peiffer</p>
+</footer>
+<div id="cookiedingsbums"> <span>Diese Webseite verwendet Cookies. </span> <a href="datenschutz.html">Hier erfahrt ihr alles zum Datenschutz.</a><br>
+	<span class="cookiedingsbumsCloser" onclick="document.cookie = 'hidecookiedingsbums=1;path=/';jQuery('#cookiedingsbums').slideUp()">Ich akzeptiere.</span> <span class="cookiedingsbumsCloser" onclick="document.cookie = 'hidecookiedingsbums=1;path=/';jQuery('#cookiedingsbums').slideUp()">Ich lehne ab.</span> </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+<script>
+		 if(document.cookie.indexOf('hidecookiedingsbums=1') != -1){
+		 jQuery('#cookiedingsbums').hide();
+		 }
+		 else{
+		jQuery('#cookiedingsbums').show();
+		/* jQuery('#cookiedingsbums').prependTo('body');
+		 jQuery('.cookiedingsbumsCloser').show();*/
+		 }
+</script>
+</body>
+</html>

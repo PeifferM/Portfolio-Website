@@ -1,0 +1,636 @@
+/* Allgemeines--------------------------------------------------------------------------------------------------------------------*/
+/* Von oben nach unten--------------------- */
+/* Cookie -----------------------------*/
+
+#cookiedingsbums a {
+	color: #000;
+	text-decoration: none;
+}
+#cookiedingsbums a:hover {
+	text-decoration: underline;
+}
+#cookiedingsbums {
+	outline: 1px solid #7b92a9;
+	text-align: center;
+	border-top: 1px solid #fff;
+	border-radius: 5px;
+	background: linear-gradient(#dddddddd, #eeeeeedd);
+	position: fixed;
+	top: 10vh;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10000;
+	width: 50vw;
+	font-size: 1rem;
+	line-height: 2rem;
+	padding: 1rem;
+}
+.cookiedingsbumsCloser {
+	color: #333;
+	font: 14px/100% arial, sans-serif;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #fff;
+	cursor: pointer;
+	border: 1px solid white;
+	border-color: white #7b92a9 white #7b92a9;
+	padding: 4px 10px;
+	margin-left: 10px;
+	background: #ddd; /* Old browsers */
+	background: linear-gradient(#eee, #ddd);
+}
+.cookiedingsbumsCloser:hover {
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	border-top: 1px solid #7b92a9;
+	border-left: 1px solid #7b92a9;
+}
+
+/*HTML----------------------------*/
+
+html {
+	background: rgb(246, 246, 246);
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	max-width: 1204px;
+	margin: auto;
+	box-shadow: 0px 0px 10px silver;
+}
+
+/*font-families--------------------------------------------------------------------------------*/
+
+@font-face {
+	font-family: JetBrainsMono;
+	src: url('../fonts/JetBrainsMono-VariableFont_wght.ttf')format('truetype');
+}
+
+/*Logo----------------------------------------------------------------------------------------*/
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+img[src*="192x192."] {
+	position: absolute;
+	width: 100px;
+	top: -50px;
+	left: -10px;
+	z-index: 100;
+}
+img[src*="192x192."]:hover {
+	transform: scale(1.1)
+}
+
+/*Top-Navigation-------------------------------------------------------------------------------*/
+
+input[type*="checkbox"]{
+	display:none;
+}
+header {
+	background-color: black;
+	padding: 20px;
+	height: 50px;
+	position: relative;
+}
+#topheader1 {
+	background-image: url("../img/anime-banner.jpg");
+	height: 200px;
+	background-repeat: no-repeat; /* Set the initial position to the center */
+}
+#topheader2 {
+	background-image: url("../img/taipeh-skyline.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 190px;
+}
+#topnav {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+#topnav > ul {
+	list-style: none;
+	display: flex;
+}
+#topnav a {
+	text-decoration: none;
+	color: white;
+	font-family: JetBrainsMono;
+	font-weight: 500;
+	padding: 0.5rem 1rem;
+	display: block;
+}
+#topnav a:hover {
+	color: rgba(7, 251, 151, 1.00);
+}
+#topnav li {
+	position: relative;
+}
+#topnav ul ul {
+	list-style: none;
+	position: absolute;
+	z-index: 100;
+	/*	display:none; */
+	min-width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	/*transform: translateY(20px);*/
+	padding-top: 20px;
+	transition: 0.3s;
+}
+#topnav li:hover ul {
+	/*display:block;*/
+	opacity: 1;
+	visibility: visible;
+	/*transform: translateY(0);*/
+	padding-top: 0;
+}
+#topnav ul ul a {
+	background: rgb(170, 255, 221);
+	border-bottom: 1px solid;
+	transition: 0.5s;
+	width: 100%;
+	white-space: nowrap;
+	color: black;
+}
+#topnav ul ul a:hover {
+	background: rgb(2, 90, 54);
+}
+
+/*Main-----------------------------------------------------------------------------------------------*/
+
+main {
+	background: rgba(228, 228, 228, 1.00);
+	padding: 20px;
+}
+main > * {
+	font-family: JetBrainsMono;
+	color: black;
+}
+main ul {
+	list-style: none;
+	padding-left: 30px;
+}
+main ul li::before {
+	content: "\00bb";
+	font-weight: bold;
+	font-size: 2rem;
+	color: black;
+	display: inline-block;
+	text-indent: -30px;
+	transform: translateY(3px);
+}
+
+/*Spalterei------------------------------------------------------------------------------------------*/
+ 
+	.spalten {
+		display: flex;
+		padding: 2% 0;
+	}
+	.spalten > * {
+		flex-basis: 0;
+		flex-grow: 1;
+	}
+	.zweispalter50_50, .zweispalter75_25, .zweispalter25_75, .zweispalter60_40 {
+		display: flex;
+	}
+	.zweispalter50_50 > * {
+		flex-basis: 50%;
+	}
+	.zweispalter75_25 > div:first-of-type {
+		flex-basis: 75%;
+	}
+	.zweispalter75_25 > div:last-of-type {
+		flex-basis: 25%;
+	}
+	.zweispalter25_75 > div:first-of-type {
+		flex-basis: 25%;
+	}
+	.zweispalter25_75 > div:last-of-type {
+		flex-basis: 75%;
+	}
+	.zweispalter60_40 > div:first-of-type {
+		flex-basis: 60%;
+	}
+	.zweispalter60_40 > div:last-of-type {
+		flex-basis: 40%;
+	}
+
+/*Abstände---------------------------------------------------------------------------------------------*/
+.pad1 {
+	padding: 1%;
+}
+.pad10 {
+	padding: 1% 0;
+}
+.pad12 {
+	padding: 1% 2%;
+}
+.pad2 {
+	padding: 2%;
+}
+.pad20 {
+	padding: 2% 0;
+}
+.pad02 {
+	padding: 0 2%;
+}
+.pad200 {
+	padding: 2% 0 0;
+}
+.pad201 {
+	padding: 2% 0 1%;
+}
+.pad002 {
+	padding: 0 0 2%;
+}
+.pad3 {
+	padding: 3%;
+}
+.pad30 {
+	padding: 3% 0;
+}
+.pad32 {
+	padding: 3% 2%;
+}
+.pad300 {
+	padding: 3% 0 0;
+}
+.pad301 {
+	padding: 3% 0 1%;
+}
+.pad003 {
+	padding: 0 0 3%;
+}
+.pad5 {
+	padding: 5%;
+}
+.pad50 {
+	padding: 5% 0%;
+}
+.pad52 {
+	padding: 5% 2%;
+}
+.pad503 {
+	padding: 5% 0% 3%;
+}
+.pad005 {
+	padding: 0% 0% 5%;
+}
+.pad528 {
+	padding: 5% 2% 8%;
+}
+.mar2 {
+	margin: 2%;
+}
+.mar20 {
+	margin: 2% 0;
+}
+.mar002 {
+	margin: 0 0 2%;
+}
+.mar3 {
+	margin: 3%;
+}
+.mar30 {
+	margin: 3% 0;
+}
+.mar004 {
+	margin: 0 0 4%;
+}
+.mar5 {
+	margin: 5%;
+}
+.mar50 {
+	margin: 5% 0;
+}
+
+/*Footer--------------------------------------------------------------------------------------------*/
+
+footer {
+	background-color: black;
+	color: #fff;
+	padding: 10px;
+	min-height: 300px;
+	font-family: JetBrainsMono;
+}
+.vierspalter {
+	display: flex;
+	justify-content: center;
+	gap: 2%
+}
+.vierspalter > div {
+	flex-basis: 0;
+	flex-grow: 1;
+	min-height: 100px;
+}
+.vierspalter ul {
+	list-style: none;
+}
+.vierspalter h4 {
+	padding: 2% 0;
+}
+.social-media li {
+	padding: 0 0 10px;
+}
+.social-media span {
+	font-size: 2rem;
+}
+.social-media span:hover {
+	transform: scale(1.1);
+}
+hr {
+	color: white;
+	border: 1px dotted;
+}
+footer p {
+	text-align: center;
+}
+footer div:last-of-type {
+	padding: 0 0 4%;
+}
+.footer-links a {
+	text-decoration: none;
+	color: white;
+}
+.footer-links a:hover {
+	color: rgba(7, 251, 151, 1.00);
+}
+
+
+/* Index.html----------------------------------------------------------------------------------*/
+
+audio {
+	display: none;
+}
+
+/* About.html----------------------------------------------------------------------------------*/
+
+.block {
+	text-align: justify;
+}
+.img_rechts {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.img_rechts img {
+	margin-bottom: 30px;
+	border-radius: 5px;
+}
+.img_rechts_bl {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 0 0 5%;
+}
+.img_rechts_bl .image-container {
+	display: flex;
+	flex-basis: calc(33.33% - 20px);
+	border-radius: 5px;
+	transition: transform 0.3s ease, filter 0.3s ease;
+	align-items: center;
+	justify-content: center;
+}
+.img_rechts_bl .image-container img {
+	border-radius: 5px;
+	width: 100px;
+	transition: transform 0.3s ease, filter 0.3s ease;
+}
+.img_rechts_bl .image-container img:hover {
+	transform: scale(1.7);
+	filter: brightness(80%);
+}
+.table-container {
+	display: flex;
+}
+table {
+	flex-basis: 100%;
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	margin: 20px 0;
+	border-radius: 8px;
+}
+th, td {
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+th {
+	text-align: left;
+}
+thead th {
+	background: black;
+	color: rgb(170, 255, 221);
+}
+tbody tr:hover {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+button {
+	width: 100%;
+	height: 50px;
+	color: rgb(170, 255, 221);
+	background: black;
+	border-radius: 8px;
+}
+button:hover {
+	color: black;
+	background-color: rgba(7, 251, 151, 1.00);
+}
+.image-text {
+	display: none;
+}
+input {
+	width: 50%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+}
+th {
+	cursor: pointer;
+}
+th.ascending::after {
+	content: '\2191';
+	margin-left: 5px;
+}
+th.descending::after {
+	content: '\2193';
+	margin-left: 5px;
+}
+#ich {
+	border: 1px solid black;
+	width: 70%;
+}
+#sagrada {
+	border: 1px solid black;
+	width: 70%;
+}
+
+/*Samples.html-------------------------------------------------------------------------------*/
+
+.main-container {
+	display: flex;
+}
+.highlight-container {
+	display: flex;
+	flex-basis: calc(33.33% - 20px);
+	margin-right: 20px;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 20px;
+	background-color: black;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s;
+}
+.highlight-container:hover {
+	transform: scale(1.05);
+	color: black;
+	background-color: rgba(7,251,151,1.00);
+
+}
+.highlight-container h2 {
+	margin-bottom: 10px;
+}
+.highlight-container a {
+	text-decoration: none;
+	color: rgb(170, 255, 221);
+}
+.highlight-container a:hover {
+	color: black;
+}
+
+/* Contact.html----------------------------------------------------------------------------*/
+
+input[type=text], input[type=email], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+}
+textarea {
+	resize: none;
+}
+input[type=submit] {
+	background-color: black;
+	color: rgb(170, 255, 221);
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-family: JetBrainsMono;
+}
+input[type=submit]:hover {
+	color: black;
+	background-color: rgba(7, 251, 151, 1.00);
+}
+.container {
+	border-radius: 5px;
+	width: 50%;
+}
+
+/* Cookie.html-------------------------------------------------------------------------------*/
+
+.datenschutz_a {
+	text-decoration: none;
+	color: blue;
+}
+.datenschutz_a:hover {
+	color: rgb(1, 22, 6);
+}
+.cookie_text p {
+	padding: 0 0 2%;
+}
+.cookie_a {
+	text-decoration: none;
+	color: blue;
+}
+.cookie_a:hover {
+	color: rgb(1, 22, 6);
+}
+
+/* Datenschutz.html---------------------------------------------------------------------------*/
+
+.datenschutz_a {
+	text-decoration: none;
+	color: blue;
+}
+.datenschutz_a:hover {
+	color: rgb(1, 22, 6);
+}
+
+/*Flavorfood.html------------------------------------------------------------------------------*/
+
+.recipe-details {
+	display: none;
+}
+select {
+	width: 50%;
+}
+
+/*travel.html------------------------------------------------------------------------------------*/
+
+svg {
+	width: 100%;
+}
+svg path {
+	fill: #00394f;
+	stroke: #eee;
+	stroke-width: .25;
+}
+.Canada {
+	fill: rgba(177, 0, 0, 1.00);
+}
+#DE {
+	fill: rgba(177, 0, 0, 1.00);
+}
+#ES {
+	fill: rgba(177, 0, 0, 1.00);
+}
+#ZA {
+	fill: rgba(177, 0, 0, 1.00);
+}
+svg path:hover {
+	fill: #006284;
+	transition: 0.6s;
+	cursor: pointer;
+}
+#textElement {
+	display: none;
+}
+#replacementTextElement {
+	display: none;
+}
+#replacementTextElementDE {
+	display: none;
+}
+#replacementTextElementCanada {
+	display: none;
+}
+#replacementTextElementZA {
+	display: none;
+}
+#replacementTextElementES {
+	display: none;
+}
+
+/*Usability.html--------------------------------------------------------------------------*/
+iframe {
+	border: 1px hidden lightgray;
+	width: 100%;
+	height: 1000px;
+}
